@@ -1,0 +1,13 @@
+frappe
+insights
+erpnext
+offsite_backups
+telephony
+helpdesk
+builder
+crm
+payments
+india_compliance
+hrms
+blog
+soleos

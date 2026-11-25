@@ -1,0 +1,121 @@
+{
+    "frappe": {
+        "resolution": {
+            "commit_hash": null,
+            "branch": null
+        },
+        "required": [],
+        "idx": 1,
+        "version": "16.52.0"
+    },
+    "payments": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "d6df15a6ce91e508d58fe34ba53e27f3b63d344e",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 2,
+        "version": "0.0.1"
+    },
+    "erpnext": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "90cb7f9243048a44311777d60a1cec8ca05ceec9",
+            "branch": "v16.52.0"
+        },
+        "required": [],
+        "idx": 3,
+        "version": "16.52.0"
+    },
+    "hrms": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+            "branch": "v16.51.0"
+        },
+        "required": [],
+        "idx": 4,
+        "version": "16.51.0"
+    },
+    "india_compliance": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "53a39caeedadb91c0a57deb203deb59f845391ed",
+            "branch": "v16.11.0"
+        },
+        "required": [],
+        "idx": 5,
+        "version": "16.11.0"
+    },
+    "builder": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "37e958bc4f801d06d0438c21b97b42c45c4eaa51",
+            "branch": "v1.35.1"
+        },
+        "required": [],
+        "idx": 6,
+        "version": "1.35.1"
+    },
+    "crm": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "0baa1e8ea462b92d2920bcfdc7a532a730329b6c",
+            "branch": "v1.88.0"
+        },
+        "required": [],
+        "idx": 7,
+        "version": "1.88.0"
+    },
+    "insights": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "c7dc954d8275756deb5ad24f7c35c3f3c2ca1a6c",
+            "branch": "v3.15.1"
+        },
+        "required": [],
+        "idx": 8,
+        "version": "3.15.1"
+    },
+    "helpdesk": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "7d7e394e7571fbdbdda04a65a279566b0ac9ce7f",
+            "branch": "v1.31.0"
+        },
+        "required": [],
+        "idx": 9,
+        "version": "1.31.0"
+    },
+    "telephony": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "99c0c3b2cbd70246ed33295ebe8548e2ddded17d",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 10,
+        "version": "0.0.1"
+    },
+    "offsite_backups": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "4764d4312fe15204fbff0726a44e02c9947ab26c",
+            "branch": "version-16"
+        },
+        "required": [],
+        "idx": 11,
+        "version": "0.0.1"
+    },
+    "blog": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "a88363cb5624f8534c1d5c7a543ab329dfa25d80",
+            "branch": "version-16"
+        },
+        "required": [],
+        "idx": 12,
+        "version": "0.0.1"
+    }
+}
