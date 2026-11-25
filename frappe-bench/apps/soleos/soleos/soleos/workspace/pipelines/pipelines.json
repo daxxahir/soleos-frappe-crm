@@ -8,7 +8,7 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "filter",
- "indicator_color": "blue",
+ "indicator_color": "gray",
  "is_hidden": 0,
  "label": "Pipelines",
  "links": [
@@ -124,7 +124,7 @@
  "sequence_id": 2.0,
  "shortcuts": [
   {
-   "color": "Blue",
+   "color": "Grey",
    "doc_view": "Kanban",
    "label": "Deal Pipeline (Kanban)",
    "type": "URL",

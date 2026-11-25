@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Soleos CRM - Zoho Bigin Parity Styles
+   Soleos CRM - Custom Layout Extensions (Default Frappe UI Tokens Only)
    ========================================================================== */
 
 /* Activities Horizontal Switcher Bar & Tasks Footer (Reverted to Native Views) */
@@ -9,31 +9,29 @@
   display: none !important;
 }
 
-/* Zoho Bigin Deals Views Dropdown Menu - Reverted to Native View Controls */
+/* Deals Views Dropdown Menu - Reverted to Native View Controls */
 #soleos-deals-view-dropdown-container,
 #soleos-deals-view-dropdown-btn,
 .soleos-views-menu-popover {
   display: none !important;
 }
 
-/* Click-to-call and Clickable Contacts */
+/* Clickable Phone Numbers and Contacts (Inherits Default Frappe UI Color) */
 .soleos-phone-link {
-  color: var(--ink-gray-8, inherit) !important;
+  color: inherit;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.1s;
   display: inline-flex;
   align-items: center;
   gap: 3px;
 }
 
 .soleos-phone-link:hover {
-  color: var(--ink-blue-link, #2563eb) !important;
   text-decoration: underline;
 }
 
 .soleos-contact-link {
-  color: #2563eb !important;
+  color: inherit;
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
@@ -57,16 +55,16 @@
 }
 
 #soleos-calendar-modal-content {
-  background-color: #ffffff;
-  width: 90%;
+  background-color: var(--surface-base);
+  width: 92%;
   max-width: 1200px;
-  height: 85%;
+  height: 86vh;
   border-radius: 12px;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--outline-gray-2);
 }
 
 .soleos-modal-header {
@@ -74,14 +72,14 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 18px;
-  background-color: #f9fafb;
-  border-bottom: 1px solid #e5e7eb;
+  background-color: var(--surface-gray-1);
+  border-bottom: 1px solid var(--outline-gray-2);
 }
 
 .soleos-modal-header h3 {
   font-size: 1rem;
   font-weight: 600;
-  color: #111827;
+  color: var(--ink-gray-9);
   margin: 0;
   display: flex;
   align-items: center;
@@ -97,22 +95,22 @@
 .soleos-modal-actions a {
   padding: 5px 10px;
   border-radius: 6px;
-  background-color: #f3f4f6;
-  color: #374151;
+  background-color: var(--surface-gray-2);
+  color: var(--ink-gray-8);
   font-size: 0.8rem;
   text-decoration: none;
   font-weight: 500;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--outline-gray-2);
 }
 
 .soleos-modal-actions a:hover {
-  background-color: #e5e7eb;
+  background-color: var(--surface-gray-3);
 }
 
 .soleos-modal-close-btn {
-  background-color: #fee2e2;
-  color: #991b1b;
-  border: 1px solid #fecaca;
+  background-color: var(--surface-gray-2);
+  color: var(--ink-gray-8);
+  border: 1px solid var(--outline-gray-2);
   padding: 5px 12px;
   border-radius: 6px;
   font-size: 0.8rem;
@@ -121,7 +119,7 @@
 }
 
 .soleos-modal-close-btn:hover {
-  background-color: #fecaca;
+  background-color: var(--surface-gray-3);
 }
 
 /* ==========================================================================
@@ -142,7 +140,7 @@
 .soleos-stage-deal-count {
   font-size: 0.76rem !important;
   font-weight: 500 !important;
-  color: #6b7280 !important;
+  color: var(--ink-gray-5) !important;
   margin-top: 2px !important;
   letter-spacing: -0.01em !important;
   line-height: 1.1 !important;
@@ -165,7 +163,7 @@
   border-radius: 6px;
   border: none;
   background: transparent;
-  color: #6b7280;
+  color: var(--ink-gray-5);
   cursor: pointer;
   transition: all 0.15s ease;
   font-size: 16px;
@@ -173,19 +171,19 @@
 }
 
 .soleos-stage-more-btn:hover {
-  background-color: #f3f4f6;
-  color: #111827;
+  background-color: var(--surface-gray-3);
+  color: var(--ink-gray-9);
 }
 
-/* Zoho Bigin Style Column Dropdown Popover */
+/* Column Dropdown Popover */
 .soleos-stage-dropdown-menu {
   position: absolute;
   top: 100%;
   right: 0;
   margin-top: 6px;
   width: 250px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+  background: var(--surface-base);
+  border: 1px solid var(--outline-gray-2);
   border-radius: 8px;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
   z-index: 9999;
@@ -201,15 +199,15 @@
   gap: 10px;
   padding: 7px 16px;
   font-size: 0.85rem;
-  color: #374151;
+  color: var(--ink-gray-7);
   cursor: pointer;
   transition: background-color 0.1s, color 0.1s;
   user-select: none;
 }
 
 .soleos-stage-dropdown-item:hover {
-  background-color: #f3f4f6;
-  color: #111827;
+  background-color: var(--surface-gray-2);
+  color: var(--ink-gray-9);
 }
 
 .soleos-stage-dropdown-item .soleos-item-icon {
@@ -221,20 +219,20 @@
 }
 
 .soleos-stage-dropdown-item.danger {
-  color: #dc2626;
+  color: var(--ink-red-6);
 }
 
 .soleos-stage-dropdown-item.danger:hover {
-  background-color: #fef2f2;
-  color: #b91c1c;
+  background-color: var(--surface-red-2);
+  color: var(--ink-red-7);
 }
 
-/* Dropdown Bottom Banner (Default Frappe CRM Style) */
+/* Dropdown Bottom Banner */
 .soleos-stage-menu-banner {
   margin: 8px 10px 4px 10px;
   padding: 10px 12px;
-  background: var(--surface-gray-2, #f3f3f3);
-  border: 1px solid var(--outline-gray-2, #e2e2e2);
+  background: var(--surface-gray-2);
+  border: 1px solid var(--outline-gray-2);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -244,14 +242,14 @@
 .soleos-banner-text {
   font-size: 0.76rem;
   line-height: 1.35;
-  color: var(--ink-gray-7, #383838);
+  color: var(--ink-gray-7);
   margin: 0;
 }
 
 .soleos-banner-btn {
   align-self: flex-start;
-  background-color: var(--surface-gray-10, #171717);
-  color: var(--ink-base, #ffffff);
+  background-color: var(--surface-gray-10);
+  color: var(--ink-base);
   border: none;
   border-radius: 5px;
   padding: 4px 12px;
@@ -262,7 +260,7 @@
 }
 
 .soleos-banner-btn:hover {
-  background-color: var(--surface-gray-9, #383838);
+  background-color: var(--surface-gray-9);
 }
 
 /* Collapsed Column State */
@@ -291,7 +289,7 @@
 }
 
 /* ==========================================================================
-   STAGE AUTOMATION SLIDE-OVER DRAWER (Zoho Bigin Parity)
+   STAGE AUTOMATION SLIDE-OVER DRAWER
    ========================================================================== */
 
 #soleos-stage-automation-backdrop {
@@ -311,7 +309,8 @@
   bottom: 0;
   width: 580px;
   max-width: 95vw;
-  background-color: #ffffff;
+  background-color: var(--surface-base);
+  color: var(--ink-gray-8);
   z-index: 10001;
   display: flex;
   flex-direction: column;
@@ -330,7 +329,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 18px 24px;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--outline-gray-2);
 }
 
 .soleos-drawer-title-row {
@@ -342,25 +341,25 @@
 .soleos-drawer-title {
   font-size: 1.22rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--ink-gray-9);
   margin: 0;
 }
 
 .soleos-stage-pill {
-  background-color: #e0f2fe;
-  color: #0284c7;
+  background-color: var(--surface-gray-2);
+  color: var(--ink-gray-7);
   font-size: 0.78rem;
   font-weight: 600;
   padding: 3px 12px;
   border-radius: 9999px;
-  border: 1px solid #bae6fd;
+  border: 1px solid var(--outline-gray-2);
 }
 
 .soleos-drawer-close-btn {
   background: transparent;
   border: none;
   font-size: 1.25rem;
-  color: #9ca3af;
+  color: var(--ink-gray-5);
   cursor: pointer;
   padding: 4px 8px;
   border-radius: 6px;
@@ -368,21 +367,21 @@
 }
 
 .soleos-drawer-close-btn:hover {
-  background-color: #f3f4f6;
-  color: #111827;
+  background-color: var(--surface-gray-2);
+  color: var(--ink-gray-9);
 }
 
 .soleos-drawer-subtitle {
   padding: 14px 24px;
-  background-color: #f9fafb;
-  border-bottom: 1px solid #f3f4f6;
+  background-color: var(--surface-gray-1);
+  border-bottom: 1px solid var(--outline-gray-1);
   font-size: 0.85rem;
-  color: #4b5563;
+  color: var(--ink-gray-6);
   line-height: 1.5;
 }
 
 .soleos-drawer-subtitle strong {
-  color: #111827;
+  color: var(--ink-gray-9);
   font-weight: 600;
 }
 
@@ -401,10 +400,10 @@
   align-items: center;
   gap: 6px;
   padding: 7px 14px;
-  background-color: #ffffff;
-  border: 1px solid #d1d5db;
+  background-color: var(--surface-base);
+  border: 1px solid var(--outline-gray-2);
   border-radius: 6px;
-  color: #2563eb;
+  color: var(--ink-gray-8);
   font-size: 0.84rem;
   font-weight: 600;
   cursor: pointer;
@@ -413,8 +412,8 @@
 }
 
 .soleos-criteria-btn:hover {
-  background-color: #eff6ff;
-  border-color: #93c5fd;
+  background-color: var(--surface-gray-2);
+  border-color: var(--outline-gray-3);
 }
 
 .soleos-criteria-list {
@@ -428,32 +427,32 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: #f9fafb;
+  background-color: var(--surface-gray-1);
   padding: 8px 12px;
   border-radius: 6px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--outline-gray-2);
 }
 
 .soleos-criteria-select,
 .soleos-criteria-input {
   padding: 6px 10px;
   font-size: 0.82rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--outline-gray-2);
   border-radius: 5px;
-  background-color: #ffffff;
-  color: #1f2937;
+  background-color: var(--surface-base);
+  color: var(--ink-gray-8);
   outline: none;
 }
 
 .soleos-criteria-select:focus,
 .soleos-criteria-input:focus {
-  border-color: #2563eb;
+  border-color: var(--outline-gray-4);
 }
 
 .soleos-criteria-remove {
   background: transparent;
   border: none;
-  color: #ef4444;
+  color: var(--ink-red-5);
   cursor: pointer;
   font-size: 14px;
   padding: 4px;
@@ -464,7 +463,7 @@
 .soleos-section-heading {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--ink-gray-9);
   margin: 0 0 10px 0;
 }
 
@@ -478,22 +477,22 @@
   display: flex;
   align-items: center;
   padding: 10px 14px;
-  border: 1px solid #f3f4f6;
+  border: 1px solid var(--outline-gray-1);
   border-radius: 6px;
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: var(--surface-base);
   transition: all 0.12s ease;
   user-select: none;
 }
 
 .soleos-action-trigger:hover {
-  background-color: #f8fafc;
-  border-color: #e2e8f0;
+  background-color: var(--surface-gray-2);
+  border-color: var(--outline-gray-2);
   transform: translateX(2px);
 }
 
 .soleos-action-plus {
-  color: var(--ink-gray-8, #171717);
+  color: var(--ink-gray-8);
   font-weight: 700;
   font-size: 16px;
   margin-right: 10px;
@@ -502,12 +501,12 @@
 .soleos-action-title {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #1e293b;
+  color: var(--ink-gray-8);
 }
 
 .soleos-badge-new {
-  background-color: #dbeafe;
-  color: #1d4ed8;
+  background-color: var(--surface-gray-2);
+  color: var(--ink-gray-7);
   font-size: 0.68rem;
   font-weight: 700;
   padding: 2px 7px;
@@ -518,7 +517,7 @@
 
 .soleos-action-arrow {
   margin-left: auto;
-  color: #94a3b8;
+  color: var(--ink-gray-4);
   font-size: 1.1rem;
 }
 
@@ -531,9 +530,9 @@
 }
 
 .soleos-action-card {
-  background-color: var(--surface-gray-1, #f8f8f8);
-  border: 1px solid var(--outline-gray-2, #e2e2e2);
-  border-left: 4px solid var(--outline-gray-5, #525252);
+  background-color: var(--surface-gray-1);
+  border: 1px solid var(--outline-gray-2);
+  border-left: 4px solid var(--outline-gray-5);
   border-radius: 6px;
   padding: 12px 14px;
   display: flex;
@@ -550,13 +549,13 @@
 .soleos-action-card-title {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--ink-gray-9);
 }
 
 .soleos-action-card-delete {
   background: transparent;
   border: none;
-  color: #ef4444;
+  color: var(--ink-red-5);
   cursor: pointer;
   font-size: 13px;
   padding: 2px 4px;
@@ -571,7 +570,7 @@
 .soleos-card-row label {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #64748b;
+  color: var(--ink-gray-6);
 }
 
 .soleos-card-row input,
@@ -580,10 +579,10 @@
   width: 100%;
   padding: 6px 10px;
   font-size: 0.82rem;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--outline-gray-2);
   border-radius: 5px;
-  background-color: #ffffff;
-  color: #1e293b;
+  background-color: var(--surface-base);
+  color: var(--ink-gray-8);
   box-sizing: border-box;
   outline: none;
 }
@@ -602,15 +601,15 @@
   align-items: center;
   gap: 12px;
   padding: 14px 24px;
-  background-color: #ffffff;
-  border-top: 1px solid #e5e7eb;
+  background-color: var(--surface-base);
+  border-top: 1px solid var(--outline-gray-2);
   z-index: 10;
 }
 
 .soleos-btn-cancel {
   background: transparent;
-  border: 1px solid #d1d5db;
-  color: #4b5563;
+  border: 1px solid var(--outline-gray-2);
+  color: var(--ink-gray-7);
   padding: 8px 18px;
   border-radius: 6px;
   font-size: 0.85rem;
@@ -620,13 +619,13 @@
 }
 
 .soleos-btn-cancel:hover {
-  background-color: #f3f4f6;
-  color: #111827;
+  background-color: var(--surface-gray-2);
+  color: var(--ink-gray-9);
 }
 
 .soleos-btn-save {
-  background-color: var(--surface-gray-10, #171717);
-  color: var(--ink-base, #ffffff);
+  background-color: var(--surface-gray-10);
+  color: var(--ink-base);
   border: none;
   padding: 8px 24px;
   border-radius: 6px;
@@ -637,7 +636,7 @@
 }
 
 .soleos-btn-save:hover {
-  background-color: var(--surface-gray-9, #383838);
+  background-color: var(--surface-gray-9);
 }
 
 /* Toast Notifications */
@@ -645,8 +644,8 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background-color: var(--surface-gray-10, #171717);
-  color: var(--ink-base, #ffffff);
+  background-color: var(--surface-gray-10);
+  color: var(--ink-base);
   padding: 12px 20px;
   border-radius: 8px;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -657,42 +656,6 @@
 }
 
 /* ==========================================================================
-   "CREATE DEAL" MODAL STYLING & RED REQUIRED ACCENTS
-   ========================================================================== */
-
-/* Red indicator on left border for required fields in Create Deal modal */
-[role="dialog"] [data-fieldname="deal_name"] input,
-[role="dialog"] [data-fieldname="organization"] input,
-[role="dialog"] [data-fieldname="contact"] input,
-[role="dialog"] [data-fieldname="status"] input,
-[role="dialog"] [data-fieldname="status"] button,
-[role="dialog"] [data-fieldname="project_size_mw"] input,
-[role="dialog"] [data-fieldname="project_location"] input,
-[role="dialog"] [data-fieldname="project_configuration"] select,
-[role="dialog"] [data-fieldname="project_configuration"] button,
-[role="dialog"] [data-fieldname="category"] select,
-[role="dialog"] [data-fieldname="category"] button,
-[role="dialog"] [data-fieldname="deal_type"] select,
-[role="dialog"] [data-fieldname="deal_type"] button,
-[role="dialog"] [data-fieldname="probability"] input,
-[role="dialog"] [data-fieldname="expected_closure_date"] input,
-[role="dialog"] [data-fieldname="source"] input,
-[role="dialog"] [data-fieldname="source"] button {
-  border-left: 3px solid #ef4444 !important;
-  border-radius: 4px;
-}
-
-/* Focus state matching Default Frappe CRM neutral border */
-[role="dialog"] input:focus,
-[role="dialog"] select:focus,
-[role="dialog"] textarea:focus,
-[role="dialog"] button:focus {
-  border-color: var(--outline-gray-4, #a3a3a3) !important;
-  outline: none !important;
-  box-shadow: 0 0 0 1px var(--outline-gray-3, #d4d4d4) !important;
-}
-
-/* ==========================================================================
    HIDE 'SAVE CHANGES' & 'CANCEL' PROMPT WHEN FILTERING VIEWS
    ========================================================================== */
 .soleos-hidden-save-view,
@@ -700,4 +663,44 @@
 .flex.flex-row-reverse.items-center.gap-2.border-r.pr-2,
 .flex.items-center.gap-2.border-r.pr-2:has(button) {
   display: none !important;
+}
+
+/* ==========================================================================
+   MOBILE VIEWPORT ADJUSTMENTS (Default Frappe CRM Responsive Overlays)
+   ========================================================================== */
+@media (max-width: 768px) {
+  #soleos-calendar-modal-content {
+    width: 96% !important;
+    height: 92% !important;
+    border-radius: 10px !important;
+  }
+
+  #soleos-stage-automation-drawer {
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+
+  .soleos-drawer-header,
+  .soleos-drawer-subtitle,
+  .soleos-drawer-body,
+  .soleos-drawer-footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .soleos-toast {
+    left: 16px;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    text-align: center;
+  }
+}
+
+@keyframes soleosFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

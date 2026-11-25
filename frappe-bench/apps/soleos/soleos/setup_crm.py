@@ -560,14 +560,14 @@ def setup_activities_workspace():
 
     shortcuts = [
         {
-            "color": "Green",
+            "color": "Grey",
             "doc_view": "List",
             "label": "Calendar",
             "type": "URL",
             "url": "/app/event/view/calendar",
         },
         {
-            "color": "Blue",
+            "color": "Grey",
             "doc_view": "List",
             "label": "Tasks",
             "link_to": "CRM Task",
@@ -575,7 +575,7 @@ def setup_activities_workspace():
             "type": "DocType",
         },
         {
-            "color": "Orange",
+            "color": "Grey",
             "doc_view": "List",
             "label": "Events",
             "link_to": "Event",
@@ -583,7 +583,7 @@ def setup_activities_workspace():
             "type": "DocType",
         },
         {
-            "color": "Cyan",
+            "color": "Grey",
             "doc_view": "List",
             "label": "Calls",
             "link_to": "CRM Call Log",
@@ -656,7 +656,7 @@ def setup_activities_workspace():
         "label": "Activities",
         "title": "Activities",
         "icon": "calendar",
-        "indicator_color": "green",
+        "indicator_color": "gray",
         "module": "Soleos",
         "public": 1,
         "type": "Workspace",
@@ -701,14 +701,14 @@ def setup_crm_activities_scripts():
     modal.id = 'crm-calendar-modal';
     modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:99999;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(2px);';
     modal.innerHTML = `
-      <div style="background:#ffffff;width:92%;height:88%;border-radius:12px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.3);display:flex;flex-direction:column;overflow:hidden;border:1px solid #e5e7eb;">
-        <div style="padding:12px 20px;border-bottom:1px solid #e5e7eb;display:flex;justify-content:space-between;align-items:center;background:#f9fafb;">
-          <div style="display:flex;align-items:center;gap:8px;font-weight:600;font-size:15px;color:#111827;">
+      <div style="background:var(--surface-base);width:92%;height:88%;border-radius:12px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.3);display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--outline-gray-2);">
+        <div style="padding:12px 20px;border-bottom:1px solid var(--outline-gray-2);display:flex;justify-content:space-between;align-items:center;background:var(--surface-gray-1);">
+          <div style="display:flex;align-items:center;gap:8px;font-weight:600;font-size:15px;color:var(--ink-gray-9);">
             <span>📅</span> Activities Calendar (Month / Week / Day)
           </div>
           <div style="display:flex;gap:10px;align-items:center;">
-            <a href="/app/event/view/calendar" target="_blank" style="padding:6px 12px;border-radius:6px;background:#e5e7eb;color:#374151;text-decoration:none;font-size:13px;font-weight:500;">Open in Desk ↗</a>
-            <button id="close-cal-modal" style="border:none;background:#fee2e2;color:#991b1b;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;">✕ Close</button>
+            <a href="/app/event/view/calendar" target="_blank" style="padding:6px 12px;border-radius:6px;background:var(--surface-gray-2);color:var(--ink-gray-8);text-decoration:none;font-size:13px;font-weight:500;">Open in Desk ↗</a>
+            <button id="close-cal-modal" style="border:1px solid var(--outline-gray-2);background:var(--surface-gray-2);color:var(--ink-gray-8);padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;">✕ Close</button>
           </div>
         </div>
         <div style="flex:1;position:relative;">
@@ -755,14 +755,14 @@ def setup_crm_activities_scripts():
     modal.id = 'crm-calendar-modal';
     modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:99999;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(2px);';
     modal.innerHTML = `
-      <div style="background:#ffffff;width:92%;height:88%;border-radius:12px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.3);display:flex;flex-direction:column;overflow:hidden;border:1px solid #e5e7eb;">
-        <div style="padding:12px 20px;border-bottom:1px solid #e5e7eb;display:flex;justify-content:space-between;align-items:center;background:#f9fafb;">
-          <div style="display:flex;align-items:center;gap:8px;font-weight:600;font-size:15px;color:#111827;">
+      <div style="background:var(--surface-base);width:92%;height:88%;border-radius:12px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.3);display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--outline-gray-2);">
+        <div style="padding:12px 20px;border-bottom:1px solid var(--outline-gray-2);display:flex;justify-content:space-between;align-items:center;background:var(--surface-gray-1);">
+          <div style="display:flex;align-items:center;gap:8px;font-weight:600;font-size:15px;color:var(--ink-gray-9);">
             <span>📅</span> Activities Calendar (Month / Week / Day)
           </div>
           <div style="display:flex;gap:10px;align-items:center;">
-            <a href="/app/event/view/calendar" target="_blank" style="padding:6px 12px;border-radius:6px;background:#e5e7eb;color:#374151;text-decoration:none;font-size:13px;font-weight:500;">Open in Desk ↗</a>
-            <button id="close-cal-modal" style="border:none;background:#fee2e2;color:#991b1b;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;">✕ Close</button>
+            <a href="/app/event/view/calendar" target="_blank" style="padding:6px 12px;border-radius:6px;background:var(--surface-gray-2);color:var(--ink-gray-8);text-decoration:none;font-size:13px;font-weight:500;">Open in Desk ↗</a>
+            <button id="close-cal-modal" style="border:1px solid var(--outline-gray-2);background:var(--surface-gray-2);color:var(--ink-gray-8);padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;">✕ Close</button>
           </div>
         </div>
         <div style="flex:1;position:relative;">
@@ -845,35 +845,28 @@ def setup_clickable_contacts_and_phones():
     style.id = 'soleos-clickable-phone-css';
     style.textContent = `
       .soleos-phone-link {
-        color: var(--ink-gray-8, inherit) !important;
-        font-weight: 500 !important;
-        text-decoration: none !important;
-        cursor: pointer !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        gap: 5px !important;
-        padding: 2px 4px !important;
-        border-radius: 4px !important;
-        transition: all 0.15s ease !important;
+        color: inherit;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
       }
       .soleos-phone-link:hover {
-        background-color: var(--surface-gray-2, #f3f3f3) !important;
-        text-decoration: underline !important;
-        color: var(--ink-blue-link, #2563eb) !important;
+        text-decoration: underline;
       }
       .soleos-contact-link {
-        color: #1d4ed8 !important;
-        font-weight: 600 !important;
-        text-decoration: none !important;
-        cursor: pointer !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        gap: 4px !important;
-        transition: all 0.15s ease !important;
+        color: inherit;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
       }
       .soleos-contact-link:hover {
-        text-decoration: underline !important;
-        color: #1e40af !important;
+        text-decoration: underline;
       }
     `;
     document.head.appendChild(style);

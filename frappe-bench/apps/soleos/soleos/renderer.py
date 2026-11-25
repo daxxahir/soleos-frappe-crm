@@ -53,10 +53,24 @@ PWA_MANIFEST = {
     ],
 }
 
-PWA_SW_JS = """self.addEventListener('install', () => self.skipWaiting());
-self.addEventListener('activate', (event) => event.waitUntil(self.clients.claim()));
+PWA_SW_JS = """/* Soleos CRM PWA SW v2 */
+self.addEventListener('install', () => self.skipWaiting());
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) => Promise.all(keys.map((k) => caches.delete(k)))).then(() => self.clients.claim())
+  );
+});
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+  const url = new URL(event.request.url);
+  if (
+    event.request.mode === 'navigate' ||
+    url.pathname === '/crm-manifest.webmanifest' ||
+    url.pathname.startsWith('/assets/soleos/')
+  ) {
+    event.respondWith(fetch(event.request, { cache: 'no-store' }));
+    return;
+  }
   event.respondWith(fetch(event.request));
 });
 """
@@ -91,12 +105,20 @@ class SoleosCRMPageRenderer(TemplatePage):
         html = self.add_csrf_token(html)
 
         html = html.replace(
+            '<meta name="apple-mobile-web-app-title" content="Frappe CRM" />',
+            '<meta name="apple-mobile-web-app-title" content="Soleos CRM" />\n    <meta name="theme-color" id="soleos-theme-color" content="#ffffff" />',
+        )
+        html = html.replace(
+            '<meta name="apple-mobile-web-app-status-bar-style" content="white" />',
+            '<meta name="apple-mobile-web-app-status-bar-style" content="default" />',
+        )
+        html = html.replace(
             'href="/assets/crm/frontend/manifest.webmanifest"',
             'crossorigin="use-credentials" href="/crm-manifest.webmanifest"',
         )
         html = html.replace(
             '<script id="vite-plugin-pwa:register-sw" src="/assets/crm/frontend/registerSW.js"></script>',
-            '<script id="soleos-pwa-register-sw">if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js",{scope:"/"});});}</script>',
+            '<script id="soleos-pwa-register-sw">if("serviceWorker" in navigator){window.addEventListener("load",async()=>{const regs=await navigator.serviceWorker.getRegistrations();for(const r of regs){if(r.scope.includes("/assets/crm/"))await r.unregister();}const reg=await navigator.serviceWorker.register("/sw.js",{scope:"/",updateViaCache:"none"});reg.update().catch(()=>{});});}</script>',
         )
 
         css_v = _asset_version("css/soleos_crm.css")

@@ -938,7 +938,18 @@
     }
   }
 
+  function syncThemeColorMeta() {
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (!meta) return;
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const next = isDark ? '#171717' : '#ffffff';
+    if (meta.getAttribute('content') !== next) {
+      meta.setAttribute('content', next);
+    }
+  }
+
   function runAllEnhancements() {
+    syncThemeColorMeta();
     removeCustomActivitiesTaskbars();
     removeCustomDealsViewsDropdown();
     enhanceKanbanColumns();
@@ -948,7 +959,13 @@
   }
 
   // Initial Run
+  syncThemeColorMeta();
   fetchStageSummary();
+
+  new MutationObserver(syncThemeColorMeta).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-theme'],
+  });
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', runAllEnhancements);

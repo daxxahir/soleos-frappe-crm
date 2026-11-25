@@ -8,7 +8,7 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "calendar",
- "indicator_color": "green",
+ "indicator_color": "gray",
  "is_hidden": 0,
  "label": "Activities",
  "links": [
@@ -124,14 +124,14 @@
  "sequence_id": 3.0,
  "shortcuts": [
   {
-   "color": "Green",
+   "color": "Grey",
    "doc_view": "List",
    "label": "Calendar",
    "type": "URL",
    "url": "/app/event/view/calendar"
   },
   {
-   "color": "Blue",
+   "color": "Grey",
    "doc_view": "List",
    "label": "Tasks",
    "link_to": "CRM Task",
@@ -139,7 +139,7 @@
    "type": "DocType"
   },
   {
-   "color": "Orange",
+   "color": "Grey",
    "doc_view": "List",
    "label": "Events",
    "link_to": "Event",
@@ -147,7 +147,7 @@
    "type": "DocType"
   },
   {
-   "color": "Cyan",
+   "color": "Grey",
    "doc_view": "List",
    "label": "Calls",
    "link_to": "CRM Call Log",
