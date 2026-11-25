@@ -1,0 +1,159 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"header_act\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Activities</b></span>\",\"col\":12}},{\"id\":\"taskbar_label\",\"type\":\"paragraph\",\"data\":{\"text\":\"<b>Activities Taskbar:</b> Quick access to your Calendar, Tasks, Events, and Calls.\",\"col\":12}},{\"id\":\"tb_calendar\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Calendar\",\"col\":3}},{\"id\":\"tb_tasks\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Tasks\",\"col\":3}},{\"id\":\"tb_events\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Events\",\"col\":3}},{\"id\":\"tb_calls\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Calls\",\"col\":3}},{\"id\":\"spacer1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"header_records\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h5\\\"><b>Activity Records & Telephony Settings</b></span>\",\"col\":12}},{\"id\":\"card_act\",\"type\":\"card\",\"data\":{\"card_name\":\"All Activities\",\"col\":6}},{\"id\":\"card_tel\",\"type\":\"card\",\"data\":{\"card_name\":\"Telephony & Integrations\",\"col\":6}}]",
+ "creation": "2026-11-18 11:10:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "calendar",
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Activities",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "All Activities",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tasks",
+   "link_count": 0,
+   "link_to": "CRM Task",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Events",
+   "link_count": 0,
+   "link_to": "Event",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Calls",
+   "link_count": 0,
+   "link_to": "CRM Call Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Notes",
+   "link_count": 0,
+   "link_to": "FCRM Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Telephony & Integrations",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Telephony Agents",
+   "link_count": 0,
+   "link_to": "CRM Telephony Agent",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Telephony Phones",
+   "link_count": 0,
+   "link_to": "CRM Telephony Phone",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Twilio Settings",
+   "link_count": 0,
+   "link_to": "CRM Twilio Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Exotel Settings",
+   "link_count": 0,
+   "link_to": "CRM Exotel Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-11-18 11:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Soleos",
+ "name": "Activities",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 3.0,
+ "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Calendar",
+   "type": "URL",
+   "url": "/app/event/view/calendar"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Tasks",
+   "link_to": "CRM Task",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Events",
+   "link_to": "Event",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Cyan",
+   "doc_view": "List",
+   "label": "Calls",
+   "link_to": "CRM Call Log",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Activities"
+}

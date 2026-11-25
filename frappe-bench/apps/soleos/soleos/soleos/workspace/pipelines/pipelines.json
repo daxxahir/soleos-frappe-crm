@@ -1,0 +1,174 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"header1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Sales Pipelines (Zoho Bigin Style)</b></span>\",\"col\":12}},{\"id\":\"p1\",\"type\":\"paragraph\",\"data\":{\"text\":\"Quick access to visual deal pipelines, stages, and CRM workflow.\",\"col\":12}},{\"id\":\"sc1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Deal Pipeline (Kanban)\",\"col\":4}},{\"id\":\"sc2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"CRM Portal Page\",\"col\":4}},{\"id\":\"sc3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Deals\",\"col\":4}},{\"id\":\"sc4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leads\",\"col\":4}},{\"id\":\"sc5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Organizations\",\"col\":4}},{\"id\":\"sc6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Deal Stages\",\"col\":4}},{\"id\":\"spacer1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"header2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h5\\\"><b>CRM Records & Configuration</b></span>\",\"col\":12}},{\"id\":\"card1\",\"type\":\"card\",\"data\":{\"card_name\":\"Sales & Deals\",\"col\":6}},{\"id\":\"card2\",\"type\":\"card\",\"data\":{\"card_name\":\"Pipeline Settings\",\"col\":6}}]",
+ "creation": "2026-11-18 10:50:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "filter",
+ "indicator_color": "blue",
+ "is_hidden": 0,
+ "label": "Pipelines",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales & Deals",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Deals",
+   "link_count": 0,
+   "link_to": "CRM Deal",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Leads",
+   "link_count": 0,
+   "link_to": "CRM Lead",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Organizations",
+   "link_count": 0,
+   "link_to": "CRM Organization",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contacts",
+   "link_count": 0,
+   "link_to": "Contact",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Pipeline Settings",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Deal Stages",
+   "link_count": 0,
+   "link_to": "CRM Deal Status",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lost Reasons",
+   "link_count": 0,
+   "link_to": "CRM Lost Reason",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lead Statuses",
+   "link_count": 0,
+   "link_to": "CRM Lead Status",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "ERPNext CRM Settings",
+   "link_count": 0,
+   "link_to": "ERPNext CRM Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-11-18 10:50:00.000000",
+ "modified_by": "Administrator",
+ "module": "Soleos",
+ "name": "Pipelines",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 2.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "Kanban",
+   "label": "Deal Pipeline (Kanban)",
+   "type": "URL",
+   "url": "/crm/deals/view/kanban"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "CRM Portal Page",
+   "type": "URL",
+   "url": "/crm"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Deals",
+   "link_to": "CRM Deal",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Leads",
+   "link_to": "CRM Lead",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Organizations",
+   "link_to": "CRM Organization",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Deal Stages",
+   "link_to": "CRM Deal Status",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Pipelines"
+}

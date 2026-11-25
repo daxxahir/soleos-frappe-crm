@@ -1,17 +1,13 @@
 # Home directory & OS/shell files
-.agent/
-.agents/
 .bash_history
 .bash_logout
 .bashrc
 .cache/
 .cloudflared/
 .config/
-.gemini/
 .gitconfig
 .gitignore_global
 .gnupg/
-.gsd/
 .landscape/
 .local/
 .motd_shown
@@ -38,10 +34,9 @@ nltk_data/
 *cloudflared*
 *.token
 
-# Frappe Bench runtime, secrets, caches, and nested app repos
+# Frappe Bench runtime, secrets, and caches
 frappe-bench/env/
 frappe-bench/logs/
-frappe-bench/apps/
 frappe-bench/sites/assets/
 frappe-bench/sites/common_site_config.json
 frappe-bench/sites/*/site_config.json
@@ -49,7 +44,11 @@ frappe-bench/sites/*/private/
 frappe-bench/sites/*/public/
 frappe-bench/sites/*/locks/
 frappe-bench/sites/*/logs/
+frappe-bench/sites/*/indexes/
+frappe-bench/sites/*/touched_tables.json
+frappe-bench/config/*.acl
 frappe-bench/config/pids/
+frappe-bench/config/scheduler_process
 **/node_modules/
 **/__pycache__/
 *.pyc
@@ -57,8 +56,3 @@ frappe-bench/config/pids/
 *.rdb
 *.sqlite
 *.db
-frappe-bench/archived/
-frappe-bench/sites/*/indexes/
-frappe-bench/sites/*/touched_tables.json
-frappe-bench/config/*.acl
-frappe-bench/config/scheduler_process
