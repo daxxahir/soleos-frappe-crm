@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
-export PATH=/home/soleos/.local/bin:/home/soleos/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Users/Soleos/.gemini/antigravity/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/WSL/:/mnt/c/Users/Soleos/.gemini/antigravity-ide/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/WSL/:/mnt/c/Users/Soleos/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Soleos/AppData/Local/Programs/Antigravity IDE/bin:/mnt/c/Users/Soleos/AppData/Local/Microsoft/WinGet/Packages/OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe/node-v24.20.0-win-x64:/snap/bin
-cd /home/soleos/frappe-bench
+export PATH="/home/soleos/.local/bin:/home/soleos/.nvm/versions/node/v24.21.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+# Stop any stale/orphaned bench processes holding Frappe ports before starting
+pkill -f 'redis-server 127.0.0.1:11001' 2>/dev/null || true
+pkill -f 'redis-server 127.0.0.1:13001' 2>/dev/null || true
+pkill -f 'redis-server config/redis_' 2>/dev/null || true
+pkill -f 'frappe.utils.bench_helper frappe (serve|schedule|worker|watch)' 2>/dev/null || true
+pkill -f 'apps/frappe/socketio.js' 2>/dev/null || true
+sleep 1
+
+cd /home/soleos/frappe-bench || exit 1
 exec bench start

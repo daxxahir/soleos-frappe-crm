@@ -56,3 +56,4 @@ frappe-bench/config/scheduler_process
 *.rdb
 *.sqlite
 *.db
+**/.venv/
