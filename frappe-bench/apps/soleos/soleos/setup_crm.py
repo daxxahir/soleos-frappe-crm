@@ -845,7 +845,7 @@ def setup_clickable_contacts_and_phones():
     style.id = 'soleos-clickable-phone-css';
     style.textContent = `
       .soleos-phone-link {
-        color: #15803d !important;
+        color: var(--ink-gray-8, inherit) !important;
         font-weight: 500 !important;
         text-decoration: none !important;
         cursor: pointer !important;
@@ -857,32 +857,9 @@ def setup_clickable_contacts_and_phones():
         transition: all 0.15s ease !important;
       }
       .soleos-phone-link:hover {
-        background-color: #f0fdf4 !important;
+        background-color: var(--surface-gray-2, #f3f3f3) !important;
         text-decoration: underline !important;
-        color: #166534 !important;
-      }
-      .soleos-call-btn {
-        display: inline-flex !important;
-        align-items: center !important;
-        gap: 4px !important;
-        padding: 3px 8px !important;
-        margin-left: 6px !important;
-        border-radius: 5px !important;
-        background: #f0fdf4 !important;
-        color: #16a34a !important;
-        border: 1px solid #bbf7d0 !important;
-        font-size: 12px !important;
-        font-weight: 600 !important;
-        text-decoration: none !important;
-        cursor: pointer !important;
-        vertical-align: middle !important;
-        transition: all 0.15s ease !important;
-        white-space: nowrap !important;
-      }
-      .soleos-call-btn:hover {
-        background: #dcfce7 !important;
-        border-color: #86efac !important;
-        color: #15803d !important;
+        color: var(--ink-blue-link, #2563eb) !important;
       }
       .soleos-contact-link {
         color: #1d4ed8 !important;
@@ -937,44 +914,7 @@ def setup_clickable_contacts_and_phones():
   }
 
   function enhanceDOM() {
-    // 1. Form Inputs with Phone/Mobile Number
-    let fields = document.querySelectorAll('.field, [data-field]');
-    fields.forEach(field => {
-      let labelEl = field.querySelector('.truncate, label');
-      let labelText = labelEl ? labelEl.textContent.trim().toLowerCase() : '';
-      let isPhone = labelText.includes('phone') || labelText.includes('mobile') || labelText.includes('call');
-      if (isPhone) {
-        let input = field.querySelector('input');
-        if (input && input.value) {
-          let clean = cleanPhone(input.value);
-          if (clean && !field.querySelector('.soleos-call-btn')) {
-            let btn = document.createElement('a');
-            btn.className = 'soleos-call-btn';
-            btn.href = 'tel:' + clean;
-            btn.title = 'Call ' + input.value;
-            btn.innerHTML = '📞 <span>Call</span>';
-            btn.onclick = (e) => callNumber(clean, e);
-            if (input.parentNode) input.parentNode.appendChild(btn);
-          }
-        } else {
-          let valEl = field.querySelector('.text-ink-gray-5, .text-ink-gray-9, .cursor-pointer');
-          if (valEl && valEl.textContent && !valEl.querySelector('.soleos-call-btn')) {
-            let clean = cleanPhone(valEl.textContent);
-            if (clean && valEl.parentNode && !valEl.parentNode.querySelector('.soleos-call-btn')) {
-              let btn = document.createElement('a');
-              btn.className = 'soleos-call-btn';
-              btn.href = 'tel:' + clean;
-              btn.title = 'Call ' + clean;
-              btn.innerHTML = '📞 <span>Call</span>';
-              btn.onclick = (e) => callNumber(clean, e);
-              valEl.parentNode.appendChild(btn);
-            }
-          }
-        }
-      }
-    });
-
-    // 2. Deal Contacts Section & MobileDeal Contacts
+    // 1. Deal Contacts Section & MobileDeal Contacts
     let phoneRows = document.querySelectorAll('.flex.items-center.gap-3');
     phoneRows.forEach(row => {
       if (row.dataset.soleosPhoneEnhanced) return;

@@ -822,7 +822,7 @@
           if (!parent) return NodeFilter.FILTER_REJECT;
           const tag = parent.tagName.toLowerCase();
           if (['script', 'style', 'input', 'textarea', 'a', 'button'].includes(tag)) return NodeFilter.FILTER_REJECT;
-          if (parent.closest('.soleos-phone-link, .soleos-call-btn, .soleos-criteria-row, .soleos-action-card')) return NodeFilter.FILTER_REJECT;
+          if (parent.closest('.soleos-phone-link, .soleos-criteria-row, .soleos-action-card')) return NodeFilter.FILTER_REJECT;
           return NodeFilter.FILTER_ACCEPT;
         }
       }
@@ -846,31 +846,13 @@
           const span = document.createElement('span');
           span.innerHTML = val.replace(
             match[0],
-            `<a href="tel:${cleanNumber}" class="soleos-phone-link">${match[0]}</a>` +
-            `<a href="tel:${cleanNumber}" class="soleos-call-btn" title="Click to Call">📞 Call</a>`
+            `<a href="tel:${cleanNumber}" class="soleos-phone-link">${match[0]}</a>`
           );
           if (node.parentNode) {
             node.parentNode.replaceChild(span, node);
           }
         }
       }
-    });
-
-    const phoneInputs = document.querySelectorAll('input[type="tel"], input[name*="phone"], input[name*="mobile"]');
-    phoneInputs.forEach(input => {
-      if (!input.value) return;
-      const clean = input.value.replace(/[^\d+]/g, '');
-      if (clean.length < 7) return;
-
-      const parent = input.parentElement;
-      if (!parent || parent.querySelector('.soleos-call-btn')) return;
-
-      const callBtn = document.createElement('a');
-      callBtn.href = `tel:${clean}`;
-      callBtn.className = 'soleos-call-btn';
-      callBtn.title = 'Click to Call';
-      callBtn.innerHTML = '📞 Call';
-      parent.appendChild(callBtn);
     });
 
     const contactElements = document.querySelectorAll('[data-contact-name], .contact-cell');
