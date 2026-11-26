@@ -1,0 +1,16 @@
+# Ignore everything in the home directory except Docker config and the soleos custom app
+*
+!docker/
+!frappe-bench/
+frappe-bench/*
+!frappe-bench/apps/
+frappe-bench/apps/*
+!frappe-bench/apps/soleos/
+
+# Exclude local secrets, git metadata, and python caches
+docker/.env
+**/.git
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/*.log

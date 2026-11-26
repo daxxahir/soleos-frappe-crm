@@ -117,5 +117,15 @@
         "required": [],
         "idx": 12,
         "version": "0.0.1"
+    },
+    "lms": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "3375b24109b8a8cf64f71c3ebc4870605d1cac89",
+            "branch": "version-16"
+        },
+        "required": [],
+        "idx": 13,
+        "version": "16.4.0"
     }
 }

@@ -1,0 +1,116 @@
+x-customizable-image: &customizable_image
+  image: ${CUSTOM_IMAGE:-soleos-frappe}:${CUSTOM_TAG:-v16}
+  build:
+    context: ..
+    dockerfile: docker/Containerfile
+    args:
+      FRAPPE_PATH: ${FRAPPE_PATH:-https://github.com/frappe/frappe}
+      FRAPPE_BRANCH: ${FRAPPE_BRANCH:-v16.52.0}
+  pull_policy: ${PULL_POLICY:-never}
+  restart: ${RESTART_POLICY:-unless-stopped}
+
+x-depends-on-configurator: &depends_on_configurator
+  depends_on:
+    configurator:
+      condition: service_completed_successfully
+
+x-backend-defaults: &backend_defaults
+  <<: [*depends_on_configurator, *customizable_image]
+  volumes:
+    - sites:/home/frappe/frappe-bench/sites
+    - logs:/home/frappe/frappe-bench/logs
+
+services:
+  configurator:
+    <<: *backend_defaults
+    platform: linux/amd64
+    entrypoint:
+      - bash
+      - -c
+    command:
+      - >
+        ls -1 apps > sites/apps.txt;
+        bench set-config -g db_host $$DB_HOST;
+        bench set-config -gp db_port $$DB_PORT;
+        bench set-config -g redis_cache "redis://$$REDIS_CACHE";
+        bench set-config -g redis_queue "redis://$$REDIS_QUEUE";
+        bench set-config -g redis_socketio "redis://$$REDIS_QUEUE";
+        bench set-config -gp socketio_port $$SOCKETIO_PORT;
+        bench set-config -g chromium_path /usr/lib/chromium/chromium-headless-shell;
+        if [ -n "$$DEFAULT_SITE" ]; then
+          bench set-config -g default_site "$$DEFAULT_SITE";
+          bench set-config -gp serve_default_site True;
+        fi;
+    environment:
+      DB_HOST: ${DB_HOST:-db}
+      DB_PORT: ${DB_PORT:-3306}
+      REDIS_CACHE: ${REDIS_CACHE:-redis-cache:6379}
+      REDIS_QUEUE: ${REDIS_QUEUE:-redis-queue:6379}
+      SOCKETIO_PORT: 9000
+      DEFAULT_SITE: ${DEFAULT_SITE:-}
+    depends_on: {}
+    restart: on-failure
+
+  backend:
+    <<: *backend_defaults
+    platform: linux/amd64
+    environment:
+      GUNICORN_THREADS: ${GUNICORN_THREADS:-4}
+      GUNICORN_WORKERS: ${GUNICORN_WORKERS:-2}
+      GUNICORN_TIMEOUT: ${GUNICORN_TIMEOUT:-120}
+      FORWARDED_ALLOW_IPS: ${FORWARDED_ALLOW_IPS:-127.0.0.1,::1}
+
+  frontend:
+    <<: *customizable_image
+    platform: linux/amd64
+    command:
+      - nginx-entrypoint.sh
+    stop_signal: SIGQUIT
+    stop_grace_period: 10s
+    environment:
+      BACKEND: backend:8000
+      SOCKETIO: websocket:9000
+      NGINX_LISTEN_PORT: ${NGINX_LISTEN_PORT:-8080}
+      TRUST_UPSTREAM_FORWARDED_PROTO: ${TRUST_UPSTREAM_FORWARDED_PROTO:-off}
+      FRAPPE_SITE_NAME_HEADER: ${FRAPPE_SITE_NAME_HEADER:-$$host}
+      UPSTREAM_REAL_IP_ADDRESS: ${UPSTREAM_REAL_IP_ADDRESS:-127.0.0.1}
+      UPSTREAM_REAL_IP_HEADER: ${UPSTREAM_REAL_IP_HEADER:-X-Forwarded-For}
+      UPSTREAM_REAL_IP_RECURSIVE: ${UPSTREAM_REAL_IP_RECURSIVE:-off}
+      PROXY_READ_TIMEOUT: ${PROXY_READ_TIMEOUT:-120}
+      CLIENT_MAX_BODY_SIZE: ${CLIENT_MAX_BODY_SIZE:-50m}
+      NGINX_WORKER_SHUTDOWN_TIMEOUT: ${NGINX_WORKER_SHUTDOWN_TIMEOUT:-8s}
+    volumes:
+      - sites:/home/frappe/frappe-bench/sites
+      - logs:/home/frappe/frappe-bench/logs
+    depends_on:
+      - backend
+      - websocket
+
+  websocket:
+    <<: [*depends_on_configurator, *customizable_image]
+    platform: linux/amd64
+    command:
+      - node
+      - /home/frappe/frappe-bench/apps/frappe/socketio.js
+    volumes:
+      - sites:/home/frappe/frappe-bench/sites
+      - logs:/home/frappe/frappe-bench/logs
+
+  queue-short:
+    <<: *backend_defaults
+    platform: linux/amd64
+    command: bench worker --queue short,default
+
+  queue-long:
+    <<: *backend_defaults
+    platform: linux/amd64
+    command: bench worker --queue long,default,short
+
+  scheduler:
+    <<: *backend_defaults
+    platform: linux/amd64
+    command: bench schedule
+
+volumes:
+  sites:
+  logs:

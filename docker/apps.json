@@ -1,0 +1,50 @@
+[
+  {
+    "url": "https://github.com/frappe/payments.git",
+    "branch": "v16.0.1"
+  },
+  {
+    "url": "https://github.com/frappe/erpnext.git",
+    "branch": "v16.52.0"
+  },
+  {
+    "url": "https://github.com/frappe/hrms.git",
+    "branch": "v16.51.0"
+  },
+  {
+    "url": "https://github.com/resilient-tech/india-compliance.git",
+    "branch": "v16.11.0"
+  },
+  {
+    "url": "https://github.com/frappe/builder.git",
+    "branch": "v1.35.1"
+  },
+  {
+    "url": "https://github.com/frappe/crm.git",
+    "branch": "v1.88.0"
+  },
+  {
+    "url": "https://github.com/frappe/insights.git",
+    "branch": "v3.15.1"
+  },
+  {
+    "url": "https://github.com/frappe/helpdesk.git",
+    "branch": "v1.31.0"
+  },
+  {
+    "url": "https://github.com/frappe/telephony.git",
+    "branch": "develop"
+  },
+  {
+    "url": "https://github.com/frappe/offsite_backups.git",
+    "branch": "version-16"
+  },
+  {
+    "url": "https://github.com/frappe/blog.git",
+    "branch": "version-16"
+  },
+  {
+    "url": "https://github.com/frappe/lms.git",
+    "branch": "v16.1.1"
+  }
+]

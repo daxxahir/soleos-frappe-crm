@@ -33,6 +33,7 @@ nltk_data/
 *tunnel*
 *cloudflared*
 *.token
+docker/.env
 
 # Frappe Bench runtime, secrets, and caches
 frappe-bench/env/

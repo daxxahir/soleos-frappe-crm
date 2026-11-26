@@ -1,4 +1,5 @@
 frappe
+lms
 insights
 erpnext
 offsite_backups
